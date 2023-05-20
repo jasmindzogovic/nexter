@@ -1,6 +1,6 @@
 @use "./base" as *;
 
 .header {
-    background-color: $color-grey-dark-1;
+    background-image: url(../img/house-3.jpeg);
     grid-column: full-start / col-end 6;
 }
