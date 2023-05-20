@@ -1,6 +1,6 @@
 @use "./base" as *;
 
 .header {
-    background-image: url(../img/house-3.jpeg);
+    background-image: linear-gradient(rgba($color-secondary, .9), rgba($color-secondary, .9)), url(../img/house-3.jpeg);
     grid-column: full-start / col-end 6;
 }
