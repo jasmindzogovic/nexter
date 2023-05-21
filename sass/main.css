@@ -151,6 +151,20 @@ body {
   align-self: start;
   justify-self: start;
 }
+.header__seenon-text {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  font-size: 1.6rem;
+  color: #aaa;
+  align-items: center;
+  gap: 1.5rem;
+}
+.header__seenon-text::before, .header__seenon-text::after {
+  content: "";
+  height: 1px;
+  display: block;
+  background-color: currentColor;
+}
 .header__seenon-logos {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
