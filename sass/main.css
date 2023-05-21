@@ -101,6 +101,7 @@ body {
   border: none;
   position: relative;
   top: 15px;
+  cursor: pointer;
 }
 .nav__btn::before {
   content: "";
