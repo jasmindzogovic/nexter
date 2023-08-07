@@ -28,3 +28,21 @@ realtorsImg.forEach((realtor) => {
     e.target.style.transition = "all .2s ease-in-out";
   });
 });
+
+const obsFn = function (entries) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  feature.style.opacity = "1";
+  feature.style.transform = "translateY(-20px)";
+  feature.style.transition = "all .2s ease-in-out";
+  observer.unobserve(feature);
+};
+
+const obsOptions = {
+  threshold: 0.7,
+};
+
+const observer = new IntersectionObserver(obsFn, obsOptions);
+
+observer.observe(feature);
+
