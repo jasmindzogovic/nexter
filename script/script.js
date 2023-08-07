@@ -2,7 +2,7 @@
 
 const headerBtn = document.querySelector(".header__btn");
 const homesSection = document.querySelector(".homes");
-const homeBtn = document.querySelector(".home__btn");
+const homeBtn = document.querySelectorAll(".home__btn");
 const realtorsList = document.querySelector(".realtors__list");
 const realtorsImg = document.querySelectorAll(".realtors__img");
 const feature = document.querySelector(".features");
@@ -11,14 +11,17 @@ headerBtn.addEventListener("click", () => {
   homesSection.scrollIntoView({ behavior: "smooth" });
 });
 
-homeBtn.addEventListener("click", () => {
-  realtorsList.scrollIntoView({ behavior: "smooth" });
-});
+homeBtn.forEach((home) =>
+  home.addEventListener("click", () => {
+    realtorsList.scrollIntoView({ behavior: "smooth" });
+  })
+);
 
 realtorsImg.forEach((realtor) => {
   realtor.addEventListener("mouseenter", (e) => {
     e.target.style.transform = "scale(1.2)";
     e.target.style.transition = "all .2s ease-in";
+    e.target.style.cursor = "pointer";
   });
 });
 
@@ -39,10 +42,10 @@ const obsFn = function (entries) {
 };
 
 const obsOptions = {
+  root: null,
   threshold: 0.7,
 };
 
 const observer = new IntersectionObserver(obsFn, obsOptions);
 
 observer.observe(feature);
-
