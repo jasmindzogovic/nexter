@@ -6,6 +6,7 @@ const homeBtn = document.querySelectorAll(".home__btn");
 const realtorsList = document.querySelector(".realtors__list");
 const realtorsImg = document.querySelectorAll(".realtors__img");
 const feature = document.querySelector(".features");
+const logoImg = document.querySelector(".header__seenon-logos").childNodes;
 
 headerBtn.addEventListener("click", () => {
   homesSection.scrollIntoView({ behavior: "smooth" });
@@ -43,9 +44,22 @@ const obsFn = function (entries) {
 
 const obsOptions = {
   root: null,
-  threshold: 0.7,
+  threshold: 0.15,
 };
 
 const observer = new IntersectionObserver(obsFn, obsOptions);
 
 observer.observe(feature);
+
+logoImg.forEach((logo) => {
+  logo.addEventListener("mouseenter", () => {
+    logo.style.filter = "brightness(100%)";
+  });
+});
+
+logoImg.forEach((logo) => {
+  logo.addEventListener("mouseleave", () => {
+    logo.style.filter = "brightness(70%)";
+  });
+});
+
