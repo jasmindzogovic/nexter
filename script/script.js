@@ -54,12 +54,14 @@ observer.observe(feature);
 logoImg.forEach((logo) => {
   logo.addEventListener("mouseenter", () => {
     logo.style.filter = "brightness(100%)";
+    logo.style.transition = "all .2s ease-in-out";
   });
 });
 
 logoImg.forEach((logo) => {
   logo.addEventListener("mouseleave", () => {
     logo.style.filter = "brightness(70%)";
+    logo.style.transition = "all .2s ease-in-out";
   });
 });
 
