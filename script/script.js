@@ -3,10 +3,11 @@
 const headerBtn = document.querySelector(".header__btn");
 const homesSection = document.querySelector(".homes");
 const homeBtn = document.querySelectorAll(".home__btn");
-const realtorsList = document.querySelector(".realtors__list");
 const realtorsImg = document.querySelectorAll(".realtors__img");
 const feature = document.querySelector(".features");
 const logoImg = document.querySelector(".header__seenon-logos").childNodes;
+const header = document.querySelector(".header");
+const btn = document.getElementById("btn");
 
 headerBtn.addEventListener("click", () => {
   homesSection.scrollIntoView({ behavior: "smooth" });
@@ -14,9 +15,13 @@ headerBtn.addEventListener("click", () => {
 
 homeBtn.forEach((home) =>
   home.addEventListener("click", () => {
-    realtorsList.scrollIntoView({ behavior: "smooth" });
+    header.scrollIntoView({ behavior: "smooth" });
   })
 );
+
+btn.addEventListener("click", () => {
+  homesSection.scrollIntoView({ behavior: "smooth" });
+});
 
 realtorsImg.forEach((realtor) => {
   realtor.addEventListener("mouseenter", (e) => {
@@ -44,7 +49,7 @@ const obsFn = function (entries) {
 
 const obsOptions = {
   root: null,
-  threshold: 0.15,
+  threshold: 0.25,
 };
 
 const observer = new IntersectionObserver(obsFn, obsOptions);
@@ -64,4 +69,3 @@ logoImg.forEach((logo) => {
     logo.style.transition = "all .2s ease-in-out";
   });
 });
-
