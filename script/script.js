@@ -8,20 +8,19 @@ const feature = document.querySelector(".features");
 const logoImg = document.querySelector(".header__seenon-logos").childNodes;
 const header = document.querySelector(".header");
 const btn = document.getElementById("btn");
+const body = document.body;
 
-headerBtn.addEventListener("click", () => {
+
+body.addEventListener('click', (e)=> {
+  if(e.target !== headerBtn && e.target !== btn) return;
   homesSection.scrollIntoView({ behavior: "smooth" });
-});
+})
 
 homeBtn.forEach((home) =>
   home.addEventListener("click", () => {
     header.scrollIntoView({ behavior: "smooth" });
   })
 );
-
-btn.addEventListener("click", () => {
-  homesSection.scrollIntoView({ behavior: "smooth" });
-});
 
 realtorsImg.forEach((realtor) => {
   realtor.addEventListener("mouseenter", (e) => {
